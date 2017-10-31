@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_hJ_tULvzEeeJBccc2yRqjQ" name="DonationApplicationUseCase">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_hPw-ILvzEeeJBccc2yRqjQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Package" xmi:id="_zSvWkLxPEeeHutl0M5i6TA" name="Package1">
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_1L4CcLxPEeeHutl0M5i6TA" name="Locate on Map"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_5AfjkLxPEeeHutl0M5i6TA" name="Locate Donation Centres">
+      <generalization xmi:type="uml:Generalization" xmi:id="_E3TZgLxQEeeHutl0M5i6TA" general="_1L4CcLxPEeeHutl0M5i6TA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_7gdl8LxPEeeHutl0M5i6TA" name="Locate Charity events">
+      <generalization xmi:type="uml:Generalization" xmi:id="_FUSQcLxQEeeHutl0M5i6TA" general="_1L4CcLxPEeeHutl0M5i6TA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_-Uz84LxPEeeHutl0M5i6TA" name="Enlist as a volunteer"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_AXRj4LxQEeeHutl0M5i6TA" name="Send a donation request">
+      <include xmi:type="uml:Include" xmi:id="_DPDpULxQEeeHutl0M5i6TA" addition="_P5U1ILxTEeeHutl0M5i6TA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_BuP94LxQEeeHutl0M5i6TA" name="Approve"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_W13Q0LxQEeeHutl0M5i6TA" name="View other donation requests"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_eKYnULxQEeeHutl0M5i6TA" name="DonationCentres"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_hHl_ULxQEeeHutl0M5i6TA" name="Add to database">
+      <generalization xmi:type="uml:Generalization" xmi:id="_v9if4LxQEeeHutl0M5i6TA" general="_eKYnULxQEeeHutl0M5i6TA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_irYtULxQEeeHutl0M5i6TA" name="Remove from database">
+      <generalization xmi:type="uml:Generalization" xmi:id="_wYUXYLxQEeeHutl0M5i6TA" general="_eKYnULxQEeeHutl0M5i6TA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_lxvaQLxQEeeHutl0M5i6TA" name="Edit self information"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_nl3qULxQEeeHutl0M5i6TA" name="View all volunteers"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_0qk2wLxQEeeHutl0M5i6TA" name="Modify in database">
+      <generalization xmi:type="uml:Generalization" xmi:id="_6SeTYLxQEeeHutl0M5i6TA" general="_eKYnULxQEeeHutl0M5i6TA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_9UeEwLxQEeeHutl0M5i6TA" name="List a charity event"/>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_P5U1ILxTEeeHutl0M5i6TA" name="A donation request">
+      <generalization xmi:type="uml:Generalization" xmi:id="_hfwgULxTEeeHutl0M5i6TA" general="_BuP94LxQEeeHutl0M5i6TA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:UseCase" xmi:id="_QRNJoLxTEeeHutl0M5i6TA" name="A volunteer request">
+      <generalization xmi:type="uml:Generalization" xmi:id="_h3TdoLxTEeeHutl0M5i6TA" general="_BuP94LxQEeeHutl0M5i6TA"/>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_zoI-0LxPEeeHutl0M5i6TA" name="User"/>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_9YO_4LxPEeeHutl0M5i6TA" name="DonationActor"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_F4JLcLxQEeeHutl0M5i6TA" memberEnd="_F4MOwLxQEeeHutl0M5i6TA _F4Nc4LxQEeeHutl0M5i6TA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_F4LAoLxQEeeHutl0M5i6TA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_F4LAobxQEeeHutl0M5i6TA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_F4MOwLxQEeeHutl0M5i6TA" name="locate on map" type="_1L4CcLxPEeeHutl0M5i6TA" association="_F4JLcLxQEeeHutl0M5i6TA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_F4Nc4LxQEeeHutl0M5i6TA" name="actor1" type="_zoI-0LxPEeeHutl0M5i6TA" association="_F4JLcLxQEeeHutl0M5i6TA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_GkAy8LxQEeeHutl0M5i6TA" memberEnd="_GkBaAbxQEeeHutl0M5i6TA _GkBaArxQEeeHutl0M5i6TA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_GkAy8bxQEeeHutl0M5i6TA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_GkBaALxQEeeHutl0M5i6TA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_GkBaAbxQEeeHutl0M5i6TA" name="enlist as a volunteer" type="_-Uz84LxPEeeHutl0M5i6TA" association="_GkAy8LxQEeeHutl0M5i6TA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_GkBaArxQEeeHutl0M5i6TA" name="actor1" type="_zoI-0LxPEeeHutl0M5i6TA" association="_GkAy8LxQEeeHutl0M5i6TA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_HIn74LxQEeeHutl0M5i6TA" memberEnd="_HIoi8rxQEeeHutl0M5i6TA _HIoi87xQEeeHutl0M5i6TA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_HIoi8LxQEeeHutl0M5i6TA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_HIoi8bxQEeeHutl0M5i6TA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_HIoi8rxQEeeHutl0M5i6TA" name="actor1" type="_zoI-0LxPEeeHutl0M5i6TA" association="_HIn74LxQEeeHutl0M5i6TA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_HIoi87xQEeeHutl0M5i6TA" name="send a donation request" type="_AXRj4LxQEeeHutl0M5i6TA" association="_HIn74LxQEeeHutl0M5i6TA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_clTf4LxQEeeHutl0M5i6TA" name="SuperAdmin"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_vb5LYLxQEeeHutl0M5i6TA" memberEnd="_vb5ycrxQEeeHutl0M5i6TA _vb6ZgLxQEeeHutl0M5i6TA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_vb5ycLxQEeeHutl0M5i6TA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_vb5ycbxQEeeHutl0M5i6TA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vb5ycrxQEeeHutl0M5i6TA" name="donationcentres" type="_eKYnULxQEeeHutl0M5i6TA" association="_vb5LYLxQEeeHutl0M5i6TA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_vb6ZgLxQEeeHutl0M5i6TA" name="superadmin" type="_clTf4LxQEeeHutl0M5i6TA" association="_vb5LYLxQEeeHutl0M5i6TA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yiyq4LxQEeeHutl0M5i6TA" memberEnd="_yizR8bxQEeeHutl0M5i6TA _yizR8rxQEeeHutl0M5i6TA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_yiyq4bxQEeeHutl0M5i6TA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_yizR8LxQEeeHutl0M5i6TA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_yizR8bxQEeeHutl0M5i6TA" name="edit self information" type="_lxvaQLxQEeeHutl0M5i6TA" association="_yiyq4LxQEeeHutl0M5i6TA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_yizR8rxQEeeHutl0M5i6TA" name="donationactor" type="_9YO_4LxPEeeHutl0M5i6TA" association="_yiyq4LxQEeeHutl0M5i6TA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_zU6rYLxQEeeHutl0M5i6TA" memberEnd="_zU6rY7xQEeeHutl0M5i6TA _zU7ScLxQEeeHutl0M5i6TA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_zU6rYbxQEeeHutl0M5i6TA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_zU6rYrxQEeeHutl0M5i6TA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_zU6rY7xQEeeHutl0M5i6TA" name="approve a donation request" type="_BuP94LxQEeeHutl0M5i6TA" association="_zU6rYLxQEeeHutl0M5i6TA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_zU7ScLxQEeeHutl0M5i6TA" name="donationactor" type="_9YO_4LxPEeeHutl0M5i6TA" association="_zU6rYLxQEeeHutl0M5i6TA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_z0WZYLxQEeeHutl0M5i6TA" memberEnd="_z0WZY7xQEeeHutl0M5i6TA _z0XAcLxQEeeHutl0M5i6TA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_z0WZYbxQEeeHutl0M5i6TA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_z0WZYrxQEeeHutl0M5i6TA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_z0WZY7xQEeeHutl0M5i6TA" name="view all volunteers" type="_nl3qULxQEeeHutl0M5i6TA" association="_z0WZYLxQEeeHutl0M5i6TA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_z0XAcLxQEeeHutl0M5i6TA" name="donationactor" type="_9YO_4LxPEeeHutl0M5i6TA" association="_z0WZYLxQEeeHutl0M5i6TA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="__LzZ0LxQEeeHutl0M5i6TA" memberEnd="__L0A4rxQEeeHutl0M5i6TA __L0A47xQEeeHutl0M5i6TA">
+    <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="__L0A4LxQEeeHutl0M5i6TA" source="org.eclipse.papyrus">
+      <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="__L0A4bxQEeeHutl0M5i6TA" key="nature" value="UML_Nature"/>
+    </eAnnotations>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__L0A4rxQEeeHutl0M5i6TA" name="list a charity event" type="_9UeEwLxQEeeHutl0M5i6TA" association="__LzZ0LxQEeeHutl0M5i6TA"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="__L0A47xQEeeHutl0M5i6TA" name="donationactor" type="_9YO_4LxPEeeHutl0M5i6TA" association="__LzZ0LxQEeeHutl0M5i6TA"/>
+  </packagedElement>
+</uml:Model>

@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.uzairkhan.DonationApplication.SelectingDonationType"
+    tools:showIn="@layout/activity_selecting_donation_type">
+
+
+    <CheckBox
+        android:id="@+id/checkFoodMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Food"
+        android:textSize="20sp"
+        android:typeface="serif"
+        android:onClick="onCheckboxClicked"/>
+
+    <CheckBox
+        android:id="@+id/checkMoneyMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Money"
+        android:textSize="20sp"
+        android:typeface="serif"
+        android:onClick="onCheckboxClicked"/>
+
+    <CheckBox
+        android:id="@+id/checkBooksMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Books"
+        android:textSize="20sp"
+        android:typeface="serif"
+        android:onClick="onCheckboxClicked"/>
+
+    <CheckBox
+        android:id="@+id/checkBloodMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Blood"
+        android:textSize="20sp"
+        android:typeface="serif"
+        android:onClick="onCheckboxClicked"/>
+
+    <CheckBox
+        android:id="@+id/checkClothesMap"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Clothes"
+        android:textSize="20sp"
+        android:typeface="serif"
+        android:onClick="onCheckboxClicked"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20sp"
+        android:text="You need to select a donation type"
+        android:enabled="false"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:id="@+id/selectionError"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:background="@android:color/holo_red_light"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You need to turn location on"
+        android:enabled="false"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:id="@+id/locationError"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:background="@android:color/holo_red_light"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="You're ready to go!"
+        android:enabled="false"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:visibility="invisible"
+        android:id="@+id/readyView"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:background="@android:color/holo_blue_bright"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50sp"
+        android:layout_marginBottom="25sp"
+        android:text="Send JSON request"
+        android:enabled="false"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:id="@+id/viewMap"
+        android:background="@android:color/holo_blue_bright"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:id="@+id/output"
+        tools:text="Output here"
+        android:background="@android:color/holo_green_light"/>
+    
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn1"
+        android:text="See Google Map"
+        android:enabled="false"/>
+</LinearLayout>

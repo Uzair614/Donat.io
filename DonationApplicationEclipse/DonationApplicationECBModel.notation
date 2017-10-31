@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.2/notation" xmlns:style="http://www.eclipse.org/papyrus/infra/gmfdiag/style" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_K1CGwLxREeeHutl0M5i6TA" type="PapyrusUMLClassDiagram" name="Class Diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_MYyYgLxREeeHutl0M5i6TA" type="Class_Shape">
+    <children xmi:type="notation:DecorationNode" xmi:id="_MYy_kLxREeeHutl0M5i6TA" type="Class_NameLabel"/>
+    <children xmi:type="notation:DecorationNode" xmi:id="_MYy_kbxREeeHutl0M5i6TA" type="Class_FloatingNameLabel">
+      <layoutConstraint xmi:type="notation:Location" xmi:id="_MYy_krxREeeHutl0M5i6TA" y="15"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_MYy_k7xREeeHutl0M5i6TA" type="Class_AttributeCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_MYy_lLxREeeHutl0M5i6TA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_MYy_lbxREeeHutl0M5i6TA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_MYy_lrxREeeHutl0M5i6TA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MYy_l7xREeeHutl0M5i6TA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_MYy_mLxREeeHutl0M5i6TA" type="Class_OperationCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_MYy_mbxREeeHutl0M5i6TA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_MYy_mrxREeeHutl0M5i6TA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_MYy_m7xREeeHutl0M5i6TA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MYy_nLxREeeHutl0M5i6TA"/>
+    </children>
+    <children xmi:type="notation:BasicCompartment" xmi:id="_MYy_nbxREeeHutl0M5i6TA" type="Class_NestedClassifierCompartment">
+      <styles xmi:type="notation:TitleStyle" xmi:id="_MYy_nrxREeeHutl0M5i6TA"/>
+      <styles xmi:type="notation:SortingStyle" xmi:id="_MYy_n7xREeeHutl0M5i6TA"/>
+      <styles xmi:type="notation:FilteringStyle" xmi:id="_MYy_oLxREeeHutl0M5i6TA"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MYy_obxREeeHutl0M5i6TA"/>
+    </children>
+    <element xmi:type="uml:Class" href="DonationApplicationECBModel.uml#_MYwjULxREeeHutl0M5i6TA"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_MYyYgbxREeeHutl0M5i6TA" x="300" y="200"/>
+  </children>
+  <styles xmi:type="notation:StringValueStyle" xmi:id="_K1CGwbxREeeHutl0M5i6TA" name="diagram_compatibility_version" stringValue="1.3.0"/>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_K1CGwrxREeeHutl0M5i6TA"/>
+  <styles xmi:type="style:PapyrusDiagramStyle" xmi:id="_K1CGw7xREeeHutl0M5i6TA" diagramKindId="org.eclipse.papyrus.uml.diagram.class">
+    <owner xmi:type="uml:Model" href="DonationApplicationECBModel.uml#_K0xBALxREeeHutl0M5i6TA"/>
+  </styles>
+  <element xmi:type="uml:Model" href="DonationApplicationECBModel.uml#_K0xBALxREeeHutl0M5i6TA"/>
+</notation:Diagram>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:layout_margin="20sp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.uzairkhan.DonationApplication.DonationRequestForm"
+    tools:showIn="@layout/activity_donation_request_form">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Donation Request Type : " />
+        <Spinner
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:id="@+id/donationRequestTypeSpinner" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Address"
+            android:id="@+id/addressBox"
+            />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            tools:text=""
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/addressBox"
+            android:layout_toEndOf="@+id/addressBox"
+            android:id="@+id/addressText"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/otherBox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other: " />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="100sp"
+            tools:text=""
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/otherBox"
+            android:layout_toEndOf="@+id/otherBox"
+            android:id="@+id/otherText"/>
+    </RelativeLayout>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Submit Request"
+        android:id="@+id/sendRequestFormButton"/>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_K0xBALxREeeHutl0M5i6TA" name="DonationApplicationECBModel">
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_K8KCcLxREeeHutl0M5i6TA">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_2BoeYLxSEeeHutl0M5i6TA">
+    <importedPackage xmi:type="uml:Profile" href="../MVCStereotypes/MVCStereotypesModel.profile.uml#_HqyIkBDKEeW5V7ek2W0fug"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_MYwjULxREeeHutl0M5i6TA" name=""/>
+</uml:Model>
