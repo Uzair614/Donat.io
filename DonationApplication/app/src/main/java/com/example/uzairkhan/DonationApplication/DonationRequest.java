@@ -5,32 +5,23 @@ package com.example.uzairkhan.DonationApplication;
  */
 
 public class DonationRequest {
-    private String requesterName;
-    private String CNIC;
-    private String phoneNo;
+//    private String requesterName;
+//    private String CNIC;
+//    private String phoneNo;
+    private User requestOf;
     private String typeOfDonation;
     private String location;
     private String other;
     //willl be gotten from JSON
 
-    public DonationRequest(String rName, String CNIC, String phone, String type, String location, String other) {
-        requesterName = rName;
-        this.CNIC = CNIC;
-        this.phoneNo = phone;
+    public DonationRequest(User requester, String type, String location, String other) {
+        requestOf = requester;
         this.location = location;
         typeOfDonation = type;
         this.other = other;
     }
 
-    public String getRequesterName() {
-        return requesterName;
-    }
-
-    public String getTypeOfDonation() {
-        return typeOfDonation;
-    }
-
-    public String getLocation() {
-        return location;
+    public User getRequestOf() {
+        return requestOf;
     }
 }

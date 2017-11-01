@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "975918568691",
+    "project_id": "my-project-1507033696953"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:975918568691:android:3836ffae082259b4",
+        "android_client_info": {
+          "package_name": "com.example.uzairkhan.DonationApplication"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "975918568691-h92r3lfs232j7sgkqt7uhut746il1v6b.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "975918568691-849uf37omfgo0389ke86h4v36glomt8v.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.uzairkhan.DonationApplication",
+            "certificate_hash": "4ae364bf41714fd0c007a6d28f8e82dfb1bc8703"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyArlcCjfU7PfIG-tuYVbIlcCN30xAI-2iU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

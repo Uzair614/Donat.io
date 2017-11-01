@@ -61,9 +61,11 @@ public class DonationRequestForm extends AppCompatActivity {
                 Spinner donationRequestSpinner=(Spinner) findViewById(R.id.donationRequestTypeSpinner);
                 EditText address = (EditText) findViewById(R.id.addressText);
                 EditText otherText = (EditText) findViewById(R.id.otherText);
-                DonationRequest toSend = new DonationRequest(   getString(R.string.nameDebug),
-                                                                getString(R.string.CNICDebug),
-                                                                getString(R.string.phoneDebug),
+                User currentUser = new User(getString(R.string.nameDebug),
+                        "testemail@testemail.com",
+                        getString(R.string.CNICDebug),
+                        getString(R.string.phoneDebug));
+                DonationRequest toSend = new DonationRequest(   currentUser,
                                                                 donationRequestSpinner.getSelectedItem().toString(),
                                                                 address.getText().toString(),
                                                                 otherText.getText().toString()

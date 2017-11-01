@@ -34,13 +34,13 @@ public class DonationRequestAdapter extends ArrayAdapter<DonationRequest> {
         DonationRequest currentRequest = getItem(position);
 
         TextView nameTextView = (TextView) listItemView.findViewById(R.id.requesterName);
-        nameTextView.setText(currentRequest.getRequesterName());
+        nameTextView.setText(currentRequest.getRequestOf().getName());
 
-        TextView typeofDonationView = (TextView) listItemView.findViewById(R.id.requesterType);
-        typeofDonationView.setText(currentRequest.getTypeOfDonation());
-
-        TextView addressView = (TextView) listItemView.findViewById(R.id.requesterAddress);
-        addressView.setText(currentRequest.getLocation());
+//        TextView typeofDonationView = (TextView) listItemView.findViewById(R.id.requesterType);
+//        typeofDonationView.setText(currentRequest.getTypeOfDonation());
+//
+//        TextView addressView = (TextView) listItemView.findViewById(R.id.requesterAddress);
+//        addressView.setText(currentRequest.getLocation());
 
         return listItemView;
     }

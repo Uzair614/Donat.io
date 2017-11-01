@@ -9,12 +9,17 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
 
     <uses-feature
         android:glEsVersion="0x00020000"
         android:required="true" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -23,84 +28,78 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.example.uzairkhan.DonationApplication.MainActivity"
+            android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
-            android:name="com.example.uzairkhan.DonationApplication.SelectingDonationType"
+            android:name=".SelectingDonationType"
             android:label="@string/title_activity_selecting_donation_type"
-            android:parentActivityName="com.example.uzairkhan.DonationApplication.MainActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.uzairkhan.DonationApplication.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.uzairkhan.DonationApplication.VolunteerForm"
+            android:name=".VolunteerForm"
             android:label="@string/title_activity_volunteer_form"
-            android:parentActivityName="com.example.uzairkhan.DonationApplication.MainActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.uzairkhan.DonationApplication.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.uzairkhan.DonationApplication.MapActivity"
+            android:name=".MapActivity"
             android:label="@string/title_activity_map_activity"
-            android:parentActivityName="com.example.uzairkhan.DonationApplication.SelectingDonationType"
+            android:parentActivityName=".SelectingDonationType"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.uzairkhan.DonationApplication.SelectingDonationType" />
         </activity>
-
-
         <activity
-            android:name="com.example.uzairkhan.DonationApplication.ViewDonationRequests"
+            android:name=".ViewDonationRequests"
             android:label="@string/title_activity_view_donation_requests"
-            android:parentActivityName="com.example.uzairkhan.DonationApplication.MainActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.uzairkhan.DonationApplication.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.uzairkhan.DonationApplication.DonationRequestForm"
+            android:name=".DonationRequestForm"
             android:label="@string/title_activity_donation_request_form"
-            android:parentActivityName="com.example.uzairkhan.DonationApplication.MainActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.uzairkhan.DonationApplication.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.uzairkhan.DonationApplication.AdminViewActivity"
+            android:name=".AdminViewActivity"
             android:label="@string/title_activity_admin_view"
-            android:parentActivityName="com.example.uzairkhan.DonationApplication.MainActivity"
+            android:parentActivityName=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.uzairkhan.DonationApplication.MainActivity" />
         </activity>
         <activity
-            android:name="com.example.uzairkhan.DonationApplication.MakeAdminActivity"
+            android:name=".MakeAdminActivity"
             android:label="@string/title_activity_make_admin"
-            android:parentActivityName="com.example.uzairkhan.DonationApplication.AdminViewActivity"
+            android:parentActivityName=".AdminViewActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.uzairkhan.DonationApplication.AdminViewActivity" />
         </activity>
         <activity
-            android:name="com.example.uzairkhan.DonationApplication.AddCentreActivity"
+            android:name=".AddCentreActivity"
             android:label="@string/title_activity_add_centre"
-            android:parentActivityName="com.example.uzairkhan.DonationApplication.AdminViewActivity"
+            android:parentActivityName=".AdminViewActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -110,6 +109,15 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAlQY3vzoX_FqYmyb7-6oI_d-ZFWCA9j_M" />
+
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
