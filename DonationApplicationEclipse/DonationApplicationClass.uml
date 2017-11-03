@@ -34,7 +34,6 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
     </ownedAttribute>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_ySn60Lv2EeeJBccc2yRqjQ" name="Events"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_0A9E4Lv2EeeJBccc2yRqjQ" visibility="package" memberEnd="_0BAIMLv2EeeJBccc2yRqjQ _0BAIM7v2EeeJBccc2yRqjQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_0A9E4bv2EeeJBccc2yRqjQ" source="org.eclipse.papyrus">
       <details xmi:type="ecore:EStringToStringMapEntry" xmi:id="_0A9E4rv2EeeJBccc2yRqjQ" key="nature" value="UML_Nature"/>
@@ -85,6 +84,7 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_sLw7MLv_EeeJBccc2yRqjQ" value="*"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_VW5lsMAEEeehTMRjlFSPxg" name="NetworkController"/>
   <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_bDN_gLv3EeeJBccc2yRqjQ">
     <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_bDRC0Lv3EeeJBccc2yRqjQ" source="http://www.eclipse.org/uml2/2.0.0/UML">
       <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_Kv8EIKFXEeS_KNX0nfvIVQ"/>

@@ -47,7 +47,6 @@ public class SelectingDonationType extends AppCompatActivity implements
     private LocationRequest mLocationRequest;
     private String connectUrl = "https://donationapptest.000webhostapp.com/sendLocation.php";
     private ArrayList<String> typesArray = new ArrayList();
-    RequestQueue requestQueue;
 //    DonationCentre[] result;
     private String centresList;
     @Override
@@ -196,30 +195,31 @@ public class SelectingDonationType extends AppCompatActivity implements
                     {
                         centresList = result;
                         Toast.makeText(getApplicationContext(), "Server Contacted Successfully", Toast.LENGTH_SHORT).show();
-                        //do what you need with the result...
                     }
                 }
             });
-            /*
-                requestQueue = Volley.newRequestQueue(getApplicationContext());
-                StringRequest request = new StringRequest(Request.Method.POST,
-                        connectUrl,
-                        createMyReqSuccessListener(),
-                        createMyReqErrorListener()) {
 
-                    protected Map<String, String> getParams() throws AuthFailureError {
-                        addCentreTypes();
-                        String json = new Gson().toJson(typesArray);
-                        Map<String, String> parameters = new HashMap<>();
-                        parameters.put("Types", json);
-                        return parameters;
-                    };
-                };
-                requestQueue.add(request);
-          */  }
+//                requestQueue = Volley.newRequestQueue(getApplicationContext());
+//                StringRequest request = new StringRequest(Request.Method.POST,
+//                        connectUrl,
+//                        createMyReqSuccessListener(),
+//                        createMyReqErrorListener()) {
+//
+//                    protected Map<String, String> getParams() throws AuthFailureError {
+//                        addCentreTypes();
+//                        String json = new Gson().toJson(typesArray);
+//                        Map<String, String> parameters = new HashMap<>();
+//                        parameters.put("Types", json);
+//                        return parameters;
+//                    };
+//                };
+//                requestQueue.add(request);
+
+            }
         });
 
     }
+
 
     private void addCentreTypes() {
         typesArray.clear();

@@ -1,10 +1,12 @@
 package com.example.uzairkhan.DonationApplication;
 
+import java.io.Serializable;
+
 /**
  * Created by Uzair Khan on 11/1/2017.
  */
 
-public class User {
+public class User implements Serializable {
 
     protected String name;
     protected String email;

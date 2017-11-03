@@ -31,6 +31,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -38,11 +39,15 @@ import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.gms.auth.api.signin.GoogleSignInResult;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
+import com.google.android.gms.common.api.Response;
 
+import java.io.IOException;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import static android.Manifest.permission.READ_CONTACTS;
+
 
 /**
  * A login screen that offers login via email/password.
@@ -53,18 +58,22 @@ public class LoginActivity extends AppCompatActivity implements
 
     private static final String TAG = "SignInActivity";
     private static final int RC_SIGN_IN = 9001;
-
+    private User mainUser;
     private GoogleApiClient mGoogleApiClient;
     private TextView mStatusTextView;
     private ProgressDialog mProgressDialog;
+    private String connectUrl = "https://donationapptest.000webhostapp.com/authentication.php";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        NetworkController.getInstance(this.getApplication());
+
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
                 .requestEmail()
+                .requestIdToken(getString(R.string.server_client_id))
                 .build();
 
         mGoogleApiClient = new GoogleApiClient.Builder(this)
@@ -105,8 +114,19 @@ public class LoginActivity extends AppCompatActivity implements
         if (result.isSuccess()) {
             // Signed in successfully, show authenticated UI.
             GoogleSignInAccount acct = result.getSignInAccount();
+            String idToken = acct.getIdToken();
+            testFunc();
+            NetworkController.getInstance().PostToServer(idToken, connectUrl, new com.android.volley.Response.Listener<String>() {
+                @Override
+                public void onResponse(String response) {
+                    Log.d(TAG, "onResponse:     asd     " + response);
+                    Toast.makeText(getApplicationContext(), "User Authenticated", Toast.LENGTH_SHORT).show();
+                }
+            });
             Log.d(TAG, "Successful sign in");
             Intent i = new Intent(LoginActivity.this, MainActivity.class);
+            mainUser = new User(acct.getDisplayName(), acct.getEmail(), null, null);
+            i.putExtra("mainUser", mainUser);
             startActivity(i);
 //            mStatusTextView.setText(getString(acct.getDisplayName()));
 
@@ -116,9 +136,12 @@ public class LoginActivity extends AppCompatActivity implements
         }
     }
 
+    private void testFunc() {
+        connectUrl = getString(R.string.ip) + "authentication.php";
+    }
+
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
         Log.d(TAG, "Connection failed");
     }
 }
-

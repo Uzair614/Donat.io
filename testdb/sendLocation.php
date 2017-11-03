@@ -38,11 +38,7 @@ function sendLocation(){
 		}
 	}
 
-	// echo $query;
-	// echo $typesPost;
-
-	// $response = array($temp_array);
-	// echo $response;
+	
 	echo json_encode($temp_array);
 
 	mysqli_close($connect);

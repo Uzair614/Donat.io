@@ -24,6 +24,7 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
     boolean mapReady = false;
     private LatLng userPos;
     DonationCentre[] result;
+    private String TAG = "MapActivity";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,14 +33,6 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
@@ -49,11 +42,9 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         Bundle args = getIntent().getParcelableExtra("Bundle");
         if (args != null) {
             userPos = args.getParcelable("userPos");
-
         }
 
-
-        Log.d("In maps", "OnCreate");
+        Log.d(TAG, "OnCreate");
     }
 
     @Override
@@ -68,8 +59,12 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         if (extras != null) {
             String response = extras.getString("Centres");
             result = new Gson().fromJson(response, DonationCentre[].class);
+            MarkerOptions person = new MarkerOptions()
+                    .position(userPos)
+                    .title("You are Here");
+            n_map.addMarker(person);
             for(int i = 0; i < result.length; i++) {
-                Log.d("MapResponse", result[i].getName());
+                Log.d(TAG, "MapResponse : " + result[i].getName());
                 MarkerOptions m = new MarkerOptions()
                         .position(new LatLng(result[i].getLatitude(), result[i].getLongitude()))
                         .title(result[i].getName());

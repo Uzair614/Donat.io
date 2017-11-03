@@ -3,6 +3,7 @@ package com.example.uzairkhan.DonationApplication;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -10,22 +11,17 @@ import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
 
+    Integer i = 0;
+    private String TAG = "MainActivity";
+    private User mainUser;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//
-//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-//        fab.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-//                        .setAction("Action", null).show();
-//            }
-//        });
-        NetworkController.getInstance(this.getApplication());
+
+        mainUser = (User)getIntent().getSerializableExtra("mainUser");
+        Log.d(TAG, "onCreate: MainUserName : " + mainUser.getName() + "\nemail : " + mainUser.getEmail());
 
         TextView selectDonationView = (TextView) findViewById(R.id.donateButton);
         selectDonationView.setOnClickListener(new View.OnClickListener() {
@@ -33,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent donationIntent = new Intent(MainActivity.this, SelectingDonationType.class);
                 startActivity(donationIntent);
+                i += 3;
             }
         });
 
@@ -42,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent becomeVolunteerIntent = new Intent(MainActivity.this, VolunteerForm.class);
                 startActivity(becomeVolunteerIntent);
+                i += 40;
             }
         });
 
@@ -95,4 +93,20 @@ public class MainActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void onSaveInstanceState(Bundle savedInstanceState) {
+        // Save the user's current game state
+//        savedInstanceState.putInt(STATE_SCORE, mCurrentScore);
+//        savedInstanceState.putInt(STATE_LEVEL, mCurrentLevel);
+//        savedInstanceState;
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(savedInstanceState);
+    }
+
+
+    @Override
+    protected void onResume() {
+        Log.d(TAG, "onResume: " + i);
+        super.onResume();
+    }
 }
