@@ -234,31 +234,7 @@ public class SelectingDonationType extends AppCompatActivity implements
         if (((CheckBox)findViewById(R.id.checkClothesMap)).isChecked())
             typesArray.add("Clothes");
     }
-
-    private Response.Listener<String> createMyReqSuccessListener() {
-        return new Response.Listener<String>() {
-            @Override
-            public void onResponse(String response) {
-                centresList = response;
-//                result = new Gson().fromJson(response, DonationCentre[].class);
-//                for(int i = 0; i < result.length; i++)
-//                    Log.d("ResponseArray", result[i].toString());
-//                Log.d("VolleyResponse", "Success\t" + response);
-                Toast.makeText(getApplicationContext(), "Server Contacted Successfully", Toast.LENGTH_SHORT).show();
-            }
-        };
-    }
-
-    private Response.ErrorListener createMyReqErrorListener() {
-        return new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(getApplicationContext(), "Error Contacting Server", Toast.LENGTH_SHORT).show();
-                Log.d("VolleyResponse", error.toString());
-            }
-        };
-    }
-
+    
     private void testFunctionSelectingDonation() {
         connectUrl = getString(R.string.ip) + "sendLocation.php";
         findViewById(R.id.btn1).setEnabled(true);

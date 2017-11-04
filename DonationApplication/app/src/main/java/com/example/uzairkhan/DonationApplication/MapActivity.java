@@ -1,8 +1,7 @@
 package com.example.uzairkhan.DonationApplication;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
+import android.support.v4.app.DialogFragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -12,18 +11,21 @@ import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.MapFragment;
 import com.google.android.gms.maps.OnMapReadyCallback;
-import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.gson.Gson;
 
-public class MapActivity extends AppCompatActivity implements OnMapReadyCallback{
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class MapActivity extends AppCompatActivity implements OnMapReadyCallback, FilterDialogFragment.FilterDialogListener {
 
     GoogleMap n_map;
     boolean mapReady = false;
     private LatLng userPos;
     DonationCentre[] result;
+    private ArrayList<String> selectedFilters;
     private String TAG = "MapActivity";
 
     @Override
@@ -31,8 +33,10 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map_activity);
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        setSupportActionBar(null);
+//        setSupportActionBar(toolbar);
 //        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+//        selectedFilters = new ArrayList<>();
+        selectedFilters = new ArrayList<>(Arrays.asList(getResources().getStringArray(R.array.donation_array)));
 
         MapFragment mapFragment = (MapFragment) getFragmentManager().findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
@@ -70,5 +74,20 @@ public class MapActivity extends AppCompatActivity implements OnMapReadyCallback
                 n_map.addMarker(m);
             }
         }
+    }
+
+    @Override
+    public void onDialogPositiveClick(ArrayList<String> selectedItems) {
+        for (int i = 0; i < selectedItems.size(); i++)
+            Log.d(TAG, selectedItems.get(i) + "            returned \n");
+        selectedFilters = selectedItems;
+
+    }
+
+    public void showFilterDialog(View view) {
+        // Create an instance of the dialog fragment and show it
+        DialogFragment newFragment = FilterDialogFragment.newInstance(selectedFilters);
+        newFragment.show(getSupportFragmentManager(), "FilterDialogFragment");
+
     }
 }
