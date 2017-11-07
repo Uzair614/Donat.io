@@ -1,5 +1,10 @@
 package com.example.uzairkhan.DonationApplication;
 
+import com.google.gson.Gson;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.Serializable;
 
 /**
@@ -35,6 +40,18 @@ public class User implements Serializable {
 
     public String getPhoneNo() {
         return phoneNo;
+    }
+
+    public static boolean isVolunteer(String json) {
+        try {
+            JSONObject obj = new JSONObject(json);
+//            if (true)
+                return true;
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return false;
     }
 
 }

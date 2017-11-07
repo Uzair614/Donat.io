@@ -67,11 +67,12 @@
         />
 
     <TextView
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textColor="@android:color/white"
         android:background="@android:color/holo_green_light"
-        android:text="Admin View"
+        android:text="Profile"
         android:id="@+id/adminButton"
         android:gravity="center"
         android:padding="25dp"

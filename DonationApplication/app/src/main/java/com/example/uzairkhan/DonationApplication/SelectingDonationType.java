@@ -47,8 +47,8 @@ public class SelectingDonationType extends AppCompatActivity implements
     private LocationRequest mLocationRequest;
     private String connectUrl = "https://donationapptest.000webhostapp.com/sendLocation.php";
     private ArrayList<String> typesArray = new ArrayList();
-//    DonationCentre[] result;
     private String centresList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,14 +65,9 @@ public class SelectingDonationType extends AppCompatActivity implements
                 .addApi(LocationServices.API)
                 .build();
 
-        Log.d("For maps", "Oncreate in start view onclick");
         testFunctionSelectingDonation();
 
         seeMapButtonPress();
-        Log.d ("onCreate", "In start");
-        final TextView output = (TextView) findViewById(R.id.output);
-        Log.d ("before button press ", "In start");
-
         getDonationCentresFromServer();
     }
 
@@ -165,14 +160,10 @@ public class SelectingDonationType extends AppCompatActivity implements
                 Log.d("For maps", "On click listener");
                 Intent i = new Intent(SelectingDonationType.this, MapActivity.class);
                 Bundle args = new Bundle();
-//                args.putParcelable("userPos", new LatLng(mLocation.getLatitude(), mLocation.getLongitude()));
                 args.putParcelable("userPos", new LatLng(24.912987, 67.088384));
                 i.putExtra("Bundle", args);
                 i.putExtra("Centres", centresList);
 
-
-//                args.putParcelableArray("Centres", result);
-//                args.putParcelable("Centres", centresList);
                 startActivity(i);
             }
         });
@@ -198,23 +189,6 @@ public class SelectingDonationType extends AppCompatActivity implements
                     }
                 }
             });
-
-//                requestQueue = Volley.newRequestQueue(getApplicationContext());
-//                StringRequest request = new StringRequest(Request.Method.POST,
-//                        connectUrl,
-//                        createMyReqSuccessListener(),
-//                        createMyReqErrorListener()) {
-//
-//                    protected Map<String, String> getParams() throws AuthFailureError {
-//                        addCentreTypes();
-//                        String json = new Gson().toJson(typesArray);
-//                        Map<String, String> parameters = new HashMap<>();
-//                        parameters.put("Types", json);
-//                        return parameters;
-//                    };
-//                };
-//                requestQueue.add(request);
-
             }
         });
 
@@ -234,7 +208,8 @@ public class SelectingDonationType extends AppCompatActivity implements
         if (((CheckBox)findViewById(R.id.checkClothesMap)).isChecked())
             typesArray.add("Clothes");
     }
-    
+
+
     private void testFunctionSelectingDonation() {
         connectUrl = getString(R.string.ip) + "sendLocation.php";
         findViewById(R.id.btn1).setEnabled(true);

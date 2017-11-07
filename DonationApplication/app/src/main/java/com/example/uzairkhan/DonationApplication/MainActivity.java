@@ -21,13 +21,14 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         mainUser = (User)getIntent().getSerializableExtra("mainUser");
-        Log.d(TAG, "onCreate: MainUserName : " + mainUser.getName() + "\nemail : " + mainUser.getEmail());
+        if (mainUser != null)
+            Log.d(TAG, "onCreate: MainUserName : " + mainUser.getName() + "\nemail : " + mainUser.getEmail());
 
         TextView selectDonationView = (TextView) findViewById(R.id.donateButton);
         selectDonationView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent donationIntent = new Intent(MainActivity.this, SelectingDonationType.class);
+                Intent donationIntent = new Intent(MainActivity.this, MapActivity.class);
                 startActivity(donationIntent);
                 i += 3;
             }
@@ -98,6 +99,8 @@ public class MainActivity extends AppCompatActivity {
 //        savedInstanceState.putInt(STATE_SCORE, mCurrentScore);
 //        savedInstanceState.putInt(STATE_LEVEL, mCurrentLevel);
 //        savedInstanceState;
+
+//        savedInstanceState.put
 
         // Always call the superclass so it can save the view hierarchy state
         super.onSaveInstanceState(savedInstanceState);

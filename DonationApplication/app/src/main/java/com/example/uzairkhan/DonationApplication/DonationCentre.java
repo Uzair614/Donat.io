@@ -16,24 +16,16 @@ public class DonationCentre {
     String name;
     private double latitude;
     private double longitude;
-    private ArrayList<String> arr;
+//    private ArrayList<String> centreType;
+    private String centreType;
 
     DonationCentre() {
-        arr = new ArrayList<>();
+//        centreType = new ArrayList<>();
     }
 
     public void setName(String name) {
         this.name = name;
         Log.d("ResponseClass", name);
-    }
-
-    public void setLatlng(LatLng ltlg) {
-        latitude = ltlg.latitude;
-        longitude = ltlg.longitude;
-    }
-
-    public void addType(String s) {
-        arr.add(s);
     }
 
     public String getName() {
@@ -48,12 +40,12 @@ public class DonationCentre {
         return longitude;
     }
 
-    public ArrayList<String> getArr() {
-        return arr;
+    @Override
+    public String toString() {
+        String returnType = new String();
+        return name + "\t" + latitude + "\t" + longitude + "\t" + returnType + "\n";
     }
 
-    public void clearArr() {
-        arr.clear();
-    }
+
 
 }

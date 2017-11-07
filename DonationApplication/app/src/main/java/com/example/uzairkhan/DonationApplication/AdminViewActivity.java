@@ -62,8 +62,8 @@ public class AdminViewActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(AdminViewActivity.this, AddCentreActivity.class);
-                startActivity(i);
+//                Intent i = new Intent(AdminViewActivity.this, AddCentreActivity.class);
+//                startActivity(i);
             }
         });
     }

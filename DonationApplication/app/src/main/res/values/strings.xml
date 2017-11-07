@@ -12,7 +12,7 @@
         <item>Blood</item>
         <item>Clothes</item>
     </string-array>
-    <string name="ip">http://192.168.0.100/testdb/</string>
+    <string name="ip">http://192.168.0.105/testdb/</string>
     <string name="nameDebug">Uzair Khan Debug</string>
     <string name="phoneDebug">+92345-0900786</string>
     <string name="CNICDebug">42135-6512398-2</string>
