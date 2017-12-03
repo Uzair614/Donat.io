@@ -1,0 +1,245 @@
+drop database testdb;
+
+create database testdb;
+
+
+drop table superadmin;
+drop table Centre;
+drop table CentreType;
+drop table centreBranches;
+drop Table donationRequest;
+drop table volunteer;
+drop table admin;
+drop table users;
+
+
+
+
+CREATE Table Users (
+uID INT NOT NULL AUTO_INCREMENT,
+email VarChar(30) NOT NULL UNIQUE,
+name VarChar(50) NOT NULL,
+phone VarChar(14),
+CNIC VarChar(13),
+CONSTRAINT uid_pk PRIMARY KEY(uID));
+
+
+CREATE TABLE Admin (
+adminID INT NOT NULL AUTO_INCREMENT,
+username VarChar(50) NOT NULL UNIQUE,
+password VarChar(50) NOT NULL,
+email VarChar(30) UNIQUE,
+cellNumber VarChar(13),
+RegNo INT NOT NULL UNIQUE,
+orgName VarChar(100),
+CONSTRAINT admin_pk PRIMARY KEY(adminID)
+);
+
+CREATE TABLE CentreBranches (
+adminID INT NOT NULL,
+cID INT NOT NULL AUTO_INCREMENT,
+CONSTRAINT adminCB_fk FOREIGN KEY (adminID) REFERENCES Admin(adminID),
+CONSTRAINT uid_pk PRIMARY KEY(cID)
+);
+
+
+CREATE Table Centre (
+cID INT NOT NULL,
+cName VarChar(100) NOT NULL,
+latitude DOUBLE(10,7) NOT NULL,
+longitude DOUBLE(10,7) NOT NULL,
+CONSTRAINT cidC_fk FOREIGN KEY (cID) REFERENCES CentreBranches(cID)
+);
+
+
+CREATE Table DonationRequest (
+dID INT NOT NULL AUTO_INCREMENT,
+requesterID INT NOT NULL,
+dType VarChar(20) NOT NULL,
+address TEXT,
+other TEXT,
+approvedBy INT,
+CONSTRAINT dID_pk PRIMARY KEY(dID),
+CONSTRAINT requesterID_fk FOREIGN KEY (requesterID) REFERENCES Users(uID),
+CONSTRAINT approvedByID_fk FOREIGN KEY (approvedBy) REFERENCES Admin(adminID));
+
+CREATE Table CentreType (
+cID INT NOT NULL,
+centreType VarChar(20) NOT NULL,
+CONSTRAINT cID_fk FOREIGN KEY (cID) REFERENCES CentreBranches(cID)
+);
+
+
+
+CREATE TABLE SuperAdmin (
+username VarChar(50) NOT NULL,
+password VarChar(50) NOT NULL
+);
+
+CREATE Table Volunteer (
+vID INT NOT NULL,
+adminID INT NOT NULL,
+approved boolean not null default 0,
+CONSTRAINT vID_fk FOREIGN KEY (vID) REFERENCES Users(uID),
+CONSTRAINT OrgVolunteer_fk FOREIGN KEY (adminID) REFERENCES Admin(adminID));
+
+
+INSERT INTO users (email, name, phone, CNIC) values
+('abc@gmail.com', 'talha', '01231234567', '1234512345671'),
+('def@gmail.com', 'shuja', '01789534567', '1234512398746'),
+('ghi@gmail.com', 'abdul qadir', '01103594567', '1232059465671'),
+('jkl@gmail.com', 'ahsan', '01231287465', '1234789203671');
+
+
+INSERT INTO admin (username, password, orgName, RegNo) values
+('uzair','fast','The First Testing Ground',1),
+('admin1','fast','Welfare Society', 1544),
+('admin2','fast','Organization for advancement of Long Names', 5641),
+('admin3','fast','Charitable Name', 87979871);
+
+INSERT INTO Volunteer (vID, adminID) values
+(1, 1),
+(2, 1),
+(4, 2),
+(2, 2),
+(1, 3),
+(2, 3),
+(1, 4),
+(2, 4);
+
+
+INSERT INTO Volunteer (vID, adminID, approved) values
+(3, 1, 1),
+(3, 2, 1),
+(4, 3, 1),
+(3, 4, 1);
+
+
+INSERT INTO CentreBranches (adminID) values (1);
+INSERT INTO Centre values (1, 'The Citizen Foundation School',24.8363080,67.0783610);
+INSERT INTO CentreType values
+(1, 'BOOKS'),
+(1, 'MONEY');
+
+
+INSERT INTO CentreBranches (adminID) values (2);
+INSERT INTO Centre values (2, 'Al-Mustafa Medical Centre',24.9083810,67.0832540);
+INSERT INTO CentreType values
+(2, 'BLOOD'),
+(2, 'MONEY');
+
+
+INSERT INTO CentreBranches (adminID) values (3);
+INSERT INTO Centre values (3, 'Edhi Centre',24.8979116,67.0682348);
+INSERT INTO CentreType values
+(3, 'BOOKS'),
+(3, 'MONEY'),
+(3, 'CLOTHES'),
+(3, 'FOOD');
+
+
+INSERT INTO CentreBranches (adminID) values (4);
+INSERT INTO Centre values (4, 'National University Of Computer & Emerging Sciences',24.8568991,67.2646838);
+INSERT INTO CentreType values
+(4, 'BOOKS');
+
+
+
+
+INSERT INTO donationrequest (requesterID, dType, address, other) values
+(1, 'Blood', 'zxczxc address',''),
+(1, 'Money', 'asdasd address',''),
+(2, 'Clothes', 'qweqwe address',''),
+(2, 'Books', 'yuiyui address',''),
+(3, 'Food', 'hjkhjk address',''),
+(4, 'Money', 'bnmbnm address','');
+
+
+INSERT INTO donationrequest (requesterID, dType, address, other, approvedBy) values
+(1, 'Blood', 'bnmdfg address','ftfygjhtf', 1),
+(1, 'Money', 'qwrere address','dfsdfs', 2),
+(2, 'Clothes', 'kjljklj address','sgfdgf', 3),
+(2, 'Books', 'uiui76 address','', 3),
+(3, 'Food', 'opiop address','ggggga', 4),
+(4, 'Money', 'ewrghj address','', 4);
+
+
+
+
+CREATE TABLE Notifications (
+mID INT NOT NULL AUTO_INCREMENT,
+adminID INT NOT NULL,
+message TEXT NOT NULL,
+date DATETIME,
+sendToAll BOOLEAN NOT NULL DEFAULT FALSE,
+CONSTRAINT mID_pk PRIMARY KEY(mID),
+CONSTRAINT adminIDNotification_fk FOREIGN KEY (adminID) REFERENCES Admin(adminID)
+);
+
+
+INSERT INTO Notifications (adminID, message, date, sendToAll) values (2, "HellowWorld", NOW(), 0);
+
+
+
+
+('Masjid e Akhiyar',24.9120060,67.0899307)
+
+approved BOOLEAN NOT NULL DEFAULT FALSE,
+
+
+/////////////////////////////////////////////
+ALTER TABLE Admin
+ADD orgName VarChar(100);
+
+
+CREATE Table Admin (
+aID INT NOT NULL,
+cellNumber VarChar(13) NOT NULL,
+CONSTRAINT aID_fk FOREIGN KEY (aID) REFERENCES Users(uID));
+INSERT INTO Centre(cname, latitude, longitude) values (Aga Khan University Hospital, 24.891991,67.075204);
+
+ALTER TABLE Centre
+MODIFY COLUMN latitude DOUBLE(10,7),
+MODIFY COLUMN longitude DOUBLE(10,7),
+MODIFY COLUMN cName VarChar(100);
+
+
+ALTER TABLE Volunteer
+DELETE bType;
+
+
+INSERT INTO CentreType(, Blood);
+
+INSERT INTO Centre(cname, latitude, longitude) values (Edhi Centre, 24.897921,67.068203);
+
+INSERT INTO CentreType(, Clothes);
+INSERT INTO CentreType(, Books);
+INSERT INTO CentreType(, Money);
+INSERT INTO CentreType(, Books);
+
+
+24.912987
+67.088384	//homeland
+
+//need to add enum in database for donation types
+need to add password field in users and md5 hash in php
+need to add status field in donation request
+need to add status field in volunteer request
+need to add assertion and trigger on user email
+//could add otherinfo field in donation request field
+could add organization number in admin table
+could add address in table centre
+/*
+
+CREATE TABLE Department(
+Dept_Code Char(3) CONSTRAINT dept_pk PRIMARY KEY,
+Dept_name Varchar(20) NOT NULL);
+
+ALTER TABLE Department
+ADD Location Char(7);
+
+ALTER TABLE Faculty
+ADD CONSTRAINT faculty_dept_fk FOREIGN KEY (Dept) REFERENCES Department(Dept_Code);
+
+ALTER TABLE Faculty
+MODIFY Last_Name VarChar(25);

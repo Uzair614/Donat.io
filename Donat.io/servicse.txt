@@ -1,0 +1,64 @@
+\\google maps in android emulator
+\\get api key from google developer console
+\\	follow steps of building project
+\\sending data between activities
+\\	intent extra
+\\set correct google play version in build gradle app
+\\build map fragment
+\\sending data between activities i.e location latlng to map
+\\finding users location using location listener
+\\	periodic updates 
+\\greyed out button when selecting donation types
+\\listview and array adapter in view donation button
+\\spinners for dropdown in emergency request
+\\volunteer form bar size bug
+\\hosting database on server
+\\build database
+\\connect to database
+	\\getting locations latitude and longitude according to input sent
+	\\getting donation requests back from server for view requests
+	\\getlocations
+	\\closest location
+\\donation class
+\\	user id
+\\	type
+\\	location
+\\	additional info
+\\admin view
+\\error handling when data not received in selecting donation types volley excepption
+
+app design
+
+create functions in php
+	storing google sign in input
+	send volunteer form data
+	send donation request form data
+	insertuserdata
+criteria being sent back in json for requests
+could put place ids as check for duplication in database
+
+
+enum with donation types or maps with donation types
+progress bar when loading from the internet
+request forms in volunteer request for one to come collect donation
+address fetching or manual entry in donation request form
+google sign in
+	make new admin
+		connect with user id
+			send toasts to confirm or deny admin making success
+	send emergency notification
+		need to send bundle to identify admin
+	approve or disapprove donation requests
+		need to send bundle to identify admin
+	add new locations
+			google map view
+view for volunter to go on collection runs
+sqlite for google maps
+	google maps api
+
+refactoring code smells
+dummy values for google maps
+collector showing on google maps?
+directions to markers
+color for views in donation selection
+card view
